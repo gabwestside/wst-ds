@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 
 interface PinTokenProps {
   pin: Array<number | undefined>
@@ -7,7 +7,11 @@ interface PinTokenProps {
   children?: string
 }
 
-export const PinGrid: React.FC<PinTokenProps> = ({ isDisabled = false, onPinChange, pin}) => {
+export const PinGrid: React.FC<PinTokenProps> = ({
+  isDisabled = false,
+  onPinChange,
+  pin,
+}) => {
   const inputRefs = useRef<HTMLInputElement[]>([])
   const PIN_TOKEN_LENTGH = 6
 
@@ -18,7 +22,10 @@ export const PinGrid: React.FC<PinTokenProps> = ({ isDisabled = false, onPinChan
     }
   }
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const onChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
     const value = event.target.value
     const pinNumber = Number(value.trim())
     if (isNaN(pinNumber) || value.length === 0) {
@@ -28,14 +35,16 @@ export const PinGrid: React.FC<PinTokenProps> = ({ isDisabled = false, onPinChan
     if (pinNumber >= 0 && pinNumber <= 9) {
       onPinChange(pinNumber, index)
 
-      if (index < PIN_TOKEN_LENTGH - 1)
-      {
+      if (index < PIN_TOKEN_LENTGH - 1) {
         changePinTokenFocus(index + 1)
       }
     }
   }
 
-  const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>, index: number) => {
+  const onKeyDown = (
+    event: React.KeyboardEvent<HTMLInputElement>,
+    index: number
+  ) => {
     const keyboardkeyCode = event.nativeEvent.code
     if (keyboardkeyCode !== 'Backspace') {
       return
@@ -70,12 +79,12 @@ export const PinGrid: React.FC<PinTokenProps> = ({ isDisabled = false, onPinChan
           disabled={isDisabled}
           key={index}
           value={pin[index] || ''}
-          ref={item => {
+          ref={(item) => {
             if (item) {
               inputRefs.current[index] = item
             }
           }}
-          onChange={event => onChange(event, index)}
+          onChange={(event) => onChange(event, index)}
           onKeyDown={(event) => onKeyDown(event, index)}
           onClick={(event) => onClick(event, index)}
         />

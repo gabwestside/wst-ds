@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { PinGrid } from "./PinGrid";
+import { useState } from 'react'
+import { PinGrid } from './PinGrid'
 
 export interface PinTokenProps {
   disabled?: boolean
@@ -16,7 +16,5 @@ export function PinToken({ disabled, onChangeToken }: PinTokenProps) {
     // onChangeToken([...pin])
   }
 
-  return (
-    <PinGrid pin={pin} onPinChange={onPinChanged} isDisabled={disabled}/>
-  )
+  return <PinGrid pin={pin} onPinChange={onPinChanged} isDisabled={disabled} />
 }

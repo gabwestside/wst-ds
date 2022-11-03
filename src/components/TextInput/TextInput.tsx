@@ -20,21 +20,18 @@ export interface TextInputIconProps {
 }
 
 function TextInputIcon({ children }: TextInputIconProps) {
-  return (
-    <Slot className='w-6 h-6 text-gray-400'>
-      {children}
-    </Slot>
-  )
+  return <Slot className='w-6 h-6 text-gray-400'>{children}</Slot>
 }
 
 TextInputIcon.displayName = 'TextInput.Icon'
 
-export interface TextInputInputProps extends InputHTMLAttributes<HTMLInputElement> {}
+export interface TextInputInputProps
+  extends InputHTMLAttributes<HTMLInputElement> {}
 
 function TextInputInput(props: TextInputInputProps) {
   return (
     <input
-      className="bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400 outline-none"
+      className='bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400 outline-none'
       {...props}
     />
   )
@@ -45,5 +42,5 @@ TextInputInput.displayName = 'TextInput.Input'
 export const TextInput = {
   Root: TextInputRoot,
   Input: TextInputInput,
-  Icon: TextInputIcon
+  Icon: TextInputIcon,
 }

@@ -7,49 +7,47 @@ export default {
   component: Text,
   args: {
     children: 'Lorem ipsum.',
-    size: 'md'
+    size: 'md',
   },
   argTypes: {
     size: {
       options: ['sm', 'md', 'lg'],
       control: {
-        type: 'inline-radio'
-      }
-    }
-  }
+        type: 'inline-radio',
+      },
+    },
+  },
 } as Meta<TextProps>
 
 export const Default: StoryObj<TextProps> = {}
 
 export const Small: StoryObj<TextProps> = {
   args: {
-    size: 'sm'
-  }
+    size: 'sm',
+  },
 }
 
 export const Large: StoryObj<TextProps> = {
   args: {
-    size: 'lg'
-  }
+    size: 'lg',
+  },
 }
 
 export const CustomComponent: StoryObj<TextProps> = {
   args: {
     asChild: true,
-    children: (
-      <p>Text with paragraph</p>
-    )
+    children: <p>Text with paragraph</p>,
   },
   argTypes: {
     children: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
     asChild: {
       table: {
-        disable: true
-      }
-    }
-  }
+        disable: true,
+      },
+    },
+  },
 }

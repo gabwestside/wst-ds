@@ -6,21 +6,19 @@ export default {
   title: 'Component/TextInput',
   component: TextInput.Root,
   args: {
-    children: (
-      [
-        <TextInput.Icon>
-          <Envelope />
-        </TextInput.Icon>,
-        <TextInput.Input placeholder='Type your email address...' />
-      ]
-    ),
+    children: [
+      <TextInput.Icon>
+        <Envelope />
+      </TextInput.Icon>,
+      <TextInput.Input placeholder='Type your email address...' />,
+    ],
   },
   argTypes: {
     children: {
       table: {
-        disable: true
-      }
-    }
+        disable: true,
+      },
+    },
   },
 } as Meta<TextInputRootProps>
 
@@ -28,6 +26,6 @@ export const Default: StoryObj<TextInputRootProps> = {}
 
 export const WithoutIcon: StoryObj<TextInputRootProps> = {
   args: {
-    children: <TextInput.Input placeholder='Type your email address...' />
-  }
+    children: <TextInput.Input placeholder='Type your email address...' />,
+  },
 }

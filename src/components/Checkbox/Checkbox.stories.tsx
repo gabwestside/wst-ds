@@ -15,7 +15,7 @@ export default {
           <Text size='sm'>Lembrar-se de mim por 30 dias.</Text>
         </div>
       )
-    }
+    },
   ],
 } as Meta<CheckboxProps>
 

@@ -9,6 +9,6 @@ export function Checkbox({}: CheckboxProps) {
       <CheckboxReact.Indicator asChild>
         <Check weight='bold' className='h-5 w-5 text-cyan-500' />
       </CheckboxReact.Indicator>
-    </CheckboxReact.Root> 
+    </CheckboxReact.Root>
   )
 }
