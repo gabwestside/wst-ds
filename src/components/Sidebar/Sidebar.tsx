@@ -26,13 +26,13 @@ export const Sidebar = ({ buttonsList }: SidebarProps) => {
 
   return (
     <div
-      className={clsx('h-full bg-gray-800 transition duration-700', {
+      className={clsx('h-full bg-gray-800 transition-all duration-700', {
         'w-[320px]': isOpen,
         'w-16': !isOpen,
       })}
     >
       <div
-        className={clsx('flex justify-center items-center gap-1', {
+        className={clsx('flex justify-center items-center gap-1 transition-all duration-700', {
           'w-36': isOpen,
           'w-14': !isOpen,
         })}
@@ -49,7 +49,7 @@ export const Sidebar = ({ buttonsList }: SidebarProps) => {
       <div
         onClick={() => setIsOpen(!isOpen)}
         className={clsx(
-          'flex items-center m-3 gap-3 font-medium cursor-pointer my-3',
+          'flex items-center m-3 gap-3 font-medium cursor-pointer my-3 transition-all duration-700',
           {
             'justify-end': isOpen,
             'justify-center': !isOpen,
@@ -63,7 +63,7 @@ export const Sidebar = ({ buttonsList }: SidebarProps) => {
       <div
         onClick={() => setIsOpen(!isOpen)}
         className={clsx(
-          'flex flex-col justify-center items-center text-gray-400',
+          'flex flex-col justify-center items-center text-gray-400 transition-all duration-700',
           {
             'h-[360px]': isOpen,
             'h-[80px]': !isOpen,
@@ -79,7 +79,7 @@ export const Sidebar = ({ buttonsList }: SidebarProps) => {
 
       <div
         className={clsx({
-          'grid grid-cols-3 grid-rows-2 gap-y-6 w-full my-12 justify-items-center':
+          'grid grid-cols-3 grid-rows-2 gap-y-6 w-full my-12 justify-items-center transition-all duration-700':
             isOpen,
           'flex flex-col justify-center items-center gap-2': !isOpen,
         })}
@@ -97,7 +97,7 @@ export const Sidebar = ({ buttonsList }: SidebarProps) => {
 
       <div
         className={clsx(
-          'flex items-center m-3 gap-3 text-gray-400 font-medium cursor-pointer my-3',
+          'flex items-center m-3 gap-3 text-gray-400 font-medium cursor-pointer my-3 transition-all duration-700',
           {
             'justify-end': isOpen,
             'justify-center': !isOpen,
