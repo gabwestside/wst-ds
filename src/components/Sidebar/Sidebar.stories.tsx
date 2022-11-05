@@ -8,4 +8,15 @@ export default {
   argTypes: {},
 } as Meta<SidebarProps>
 
-export const Default: StoryObj<SidebarProps> = {}
+export const Default: StoryObj<SidebarProps> = {
+  args: { 
+    buttonsList: [
+      {children: 'CreditCard', icon: 'creditCard'},
+      {children: 'Money Transfer', icon: 'money'},
+      {children: 'Boletos', icon: 'tray'},
+      {children: 'Pix', icon: 'creditCard'},
+      {children: 'Payment', icon: 'money'},
+      {children: 'Mails', icon: 'tray'},
+    ]
+  }
+}

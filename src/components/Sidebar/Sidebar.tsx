@@ -2,21 +2,23 @@ import { useState } from 'react'
 import { clsx } from 'clsx'
 import {
   Atom,
+  User,
+  SignOut,
   ArrowSquareLeft,
   ArrowSquareRight,
-  User,
   IdentificationBadge,
-  SignOut,
-  ArrowsLeftRight,
 } from 'phosphor-react'
 
 import { Text } from '../Text/Text'
 import { Heading } from '../Heading/Heading'
-import { Button } from '../Button/Button'
 
-export interface SidebarProps {}
+import { NavButton, NavButtonProps } from '../NavButton/NavButton'
 
-export const Sidebar = ({}: SidebarProps) => {
+export interface SidebarProps {
+  buttonsList: NavButtonProps[]
+}
+
+export const Sidebar = ({ buttonsList }: SidebarProps) => {
   const [isOpen, setIsOpen] = useState(true)
   const ArrowIcon = isOpen ? ArrowSquareLeft : ArrowSquareRight
   const UserDetail = isOpen ? User : IdentificationBadge
@@ -30,7 +32,7 @@ export const Sidebar = ({}: SidebarProps) => {
       })}
     >
       <div
-        className={clsx(' flex justify-center items-center gap-1', {
+        className={clsx('flex justify-center items-center gap-1', {
           'w-36': isOpen,
           'w-14': !isOpen,
         })}
@@ -76,20 +78,21 @@ export const Sidebar = ({}: SidebarProps) => {
       </div>
 
       <div
-        className={clsx(
-          // 'grid overflow-y-auto grid-cols-3 grid-rows-2 gap-x-4 gap-y-2 w-32 my-12':
-          //   isOpen,
-          'flex flex-col justify-center items-center' //: !isOpen,
-        )}
+        className={clsx({
+          'grid grid-cols-3 grid-rows-2 gap-y-6 w-full my-12 justify-items-center':
+            isOpen,
+          'flex flex-col justify-center items-center gap-2': !isOpen,
+        })}
       >
-        <div className={clsx({ 'w-32': isOpen, 'w-auto': !isOpen }, ' my-4')}>
-          <Button asChild>
-            <div className={clsx('flex items-center justify-center gap-2')}>
-              <ArrowsLeftRight size={isOpen ? 24 : 20} />
-              {isOpen && 'Transfer'}
-            </div>
-          </Button>
-        </div>
+        {buttonsList.map(({ icon, size, children }: NavButtonProps) =>
+          isOpen ? (
+            <NavButton icon={icon} size={size}>
+              {children}
+            </NavButton>
+          ) : (
+            <NavButton icon={icon} size={'sm'} />
+          )
+        )}
       </div>
 
       <div
