@@ -9,10 +9,10 @@ import {
   IdentificationBadge,
 } from 'phosphor-react'
 
-import { Text } from '../Text/Text'
-import { Heading } from '../Heading/Heading'
+import { Text } from '../Text'
+import { Heading } from '../Heading'
 
-import { NavButton, NavButtonProps } from '../NavButton/NavButton'
+import { NavButton, NavButtonProps } from '../NavButton'
 
 export interface SidebarProps {
   buttonsList: NavButtonProps[]
@@ -105,7 +105,7 @@ export const Sidebar = ({ buttonsList }: SidebarProps) => {
         )}
       >
         <SignOut size={isOpen ? 24 : 20} />
-        {isOpen && <Text size='sm'>Sair</Text>}
+        {isOpen && <Text size='sm'>SignOut</Text>}
       </div>
     </div>
   )

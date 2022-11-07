@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { NavButton, NavButtonProps } from './NavButton'
+import { NavButton, NavButtonProps } from '.'
 
 export default {
   title: 'Component/NavButton',

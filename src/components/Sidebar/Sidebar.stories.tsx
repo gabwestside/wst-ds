@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Sidebar, SidebarProps } from './Sidebar'
+import { Sidebar, SidebarProps } from '.'
 
 export default {
   title: 'Component/Sidebar',

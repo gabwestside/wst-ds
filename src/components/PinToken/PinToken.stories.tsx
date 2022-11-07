@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { PinToken, PinTokenProps } from './PinToken'
+import { PinToken, PinTokenProps } from '.'
 
 export default {
   title: 'Component/PinToken',
