@@ -4,7 +4,9 @@ import { Loading, LoadingProps } from './'
 export default {
   title: 'Component/Loading',
   component: Loading,
-  args: {},
+  args: {
+    text: 'Aguarde...'
+  },
   argTypes: {},
 } as Meta<LoadingProps>
 
