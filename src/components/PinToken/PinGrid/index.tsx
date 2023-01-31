@@ -28,7 +28,8 @@ export const PinGrid: React.FC<PinTokenProps> = ({
   ) => {
     const value = event.target.value
     const pinNumber = Number(value.trim())
-    if (isNaN(pinNumber) || value.length === 0) {
+
+    if (isNaN(pinNumber) || value === ' ') {
       return
     }
 
